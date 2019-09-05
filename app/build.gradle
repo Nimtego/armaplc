@@ -46,4 +46,7 @@ dependencies {
     //moxy
     implementation 'com.arello-mobile:moxy-app-compat:1.5.5'
     kapt 'com.arello-mobile:moxy-compiler:1.5.5'
+
+    //ahbottom
+    implementation 'com.aurelhubert:ahbottomnavigation:2.3.4'
 }
