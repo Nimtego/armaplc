@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter
 import kotlinx.android.synthetic.main.bottom_navigation_fragment.*
@@ -21,15 +22,19 @@ class BottomNavigationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.bottom_navigation_fragment, container, false)
-        this.bottomNavController = Navigation.findNavController(view)
-        return view
+        return inflater.inflate(R.layout.bottom_navigation_fragment, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //this.bottomNavController = Navigation.findNavController(view)
+        this.bottomNavController = Navigation.findNavController(view.findViewById(R.id.bottom_bar_nav_host_fragment))
+    }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         this.bottomNavigationView = bottom_navigation_view
         initBottomNavigation()
+        this.bottomNavController.navigate(R.id.dashBoardFragment)
     }
 
     private fun initBottomNavigation() {

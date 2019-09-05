@@ -7,32 +7,35 @@
               android:orientation="vertical"
               tools:context=".BottomNavigationFragment">
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bottom navigation"/>
     <FrameLayout
+            android:id="@+id/bottom_navigation_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_gravity="fill_vertical"
+            android:layout_weight="1"
             android:background="@color/color_background_dark"
-            android:focusableInTouchMode="true">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bottom navigation"/>
+            android:focusableInTouchMode="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <fragment
                 android:id="@+id/bottom_bar_nav_host_fragment"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/bottom_navigation_height"
-                app:defaultNavHost="true"
+                android:layout_gravity="fill_vertical"
                 app:navGraph="@navigation/bottom_bar_nav_graph"/>
-
-        <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
-                android:id="@+id/bottom_navigation_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:background="@color/color_bottom_sheet_navigation_bar">
-        </com.aurelhubert.ahbottomnavigation.AHBottomNavigation>
     </FrameLayout>
+
+    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/click_accent">
+    </com.aurelhubert.ahbottomnavigation.AHBottomNavigation>
+
 
 </LinearLayout>

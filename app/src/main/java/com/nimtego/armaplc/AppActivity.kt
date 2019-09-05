@@ -13,6 +13,6 @@ class AppActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         this.appController = Navigation.findNavController(this, R.id.app_nav_host_fragment)
-        this.appController.navigate(R.id.bottom_bar_nav_graph)
+        this.appController.navigate(R.id.splashFragment)
     }
 }
