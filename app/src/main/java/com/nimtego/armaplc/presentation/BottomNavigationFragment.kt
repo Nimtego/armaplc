@@ -1,4 +1,4 @@
-package com.nimtego.armaplc
+package com.nimtego.armaplc.presentation
 
 
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter
+import com.nimtego.armaplc.R
 import kotlinx.android.synthetic.main.bottom_navigation_fragment.*
 
 class BottomNavigationFragment : Fragment() {

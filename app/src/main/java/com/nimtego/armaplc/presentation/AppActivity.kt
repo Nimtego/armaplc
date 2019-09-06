@@ -1,9 +1,10 @@
-package com.nimtego.armaplc
+package com.nimtego.armaplc.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.nimtego.armaplc.R
 
 class AppActivity : AppCompatActivity() {
 

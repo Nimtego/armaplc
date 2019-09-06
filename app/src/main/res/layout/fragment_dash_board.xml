@@ -4,7 +4,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:background="@color/color_navigation_item_inactive"
-             tools:context=".DashBoardFragment">
+             tools:context=".presentation.DashBoardFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

@@ -5,7 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.nimtego.armaplc.AppActivity">
+              tools:context="com.nimtego.armaplc.presentation.AppActivity">
 
     <FrameLayout
             android:id="@+id/status_bar"

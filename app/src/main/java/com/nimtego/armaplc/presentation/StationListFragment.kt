@@ -1,4 +1,4 @@
-package com.nimtego.armaplc
+package com.nimtego.armaplc.presentation
 
 
 import android.os.Bundle
@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import com.nimtego.armaplc.R
 import kotlinx.android.synthetic.main.fragment_station_list.*
-import kotlinx.android.synthetic.main.fragment_station_list.view.*
-import kotlinx.android.synthetic.main.fragment_station_list.view.station_button
 
 
 class StationListFragment : Fragment() {

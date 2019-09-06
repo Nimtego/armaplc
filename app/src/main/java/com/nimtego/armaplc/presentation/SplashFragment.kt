@@ -1,4 +1,4 @@
-package com.nimtego.armaplc
+package com.nimtego.armaplc.presentation
 
 
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
+import com.nimtego.armaplc.R
 import kotlinx.android.synthetic.main.fragment_splash.*
 
 
