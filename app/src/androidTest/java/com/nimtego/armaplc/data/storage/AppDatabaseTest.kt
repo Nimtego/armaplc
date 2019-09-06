@@ -43,8 +43,7 @@ class AppDatabaseTest {
         val crashType =  CrashType.CRASH_OVERHEATING
         val crash = Crash(crashType = crashType.name,
                                  pumpId = 2,
-                                 time = LocalDateTime.now().second.toLong(),
-                                 id = 0)
+                                 time = LocalDateTime.now().second.toLong())
         crashesDao.insertAll(crash)
         val crashItem = crashesDao.findByCrashType(crashType.name).first()
         assertThat(crashItem.crashType, CoreMatchers.equalTo(crash.crashType))

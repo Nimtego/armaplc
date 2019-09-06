@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "crash_table")
 data class Crash(@PrimaryKey(autoGenerate = true)
-                 var id: Long,
+                 var id: Long = 0,
                  @ColumnInfo(name = "crash_type")
                  var crashType: String,
                  @ColumnInfo(name = "pump_id")
