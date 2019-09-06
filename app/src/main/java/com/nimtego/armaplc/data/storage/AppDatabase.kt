@@ -5,7 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.nimtego.armaplc.data.model.crashes.Crash
+import com.nimtego.armaplc.data.model.crashes.CrashesDao
 import com.nimtego.armaplc.data.model.pump.Pump
+import com.nimtego.armaplc.data.model.pump.PumpsDao
 
 @Database(
     entities = [Crash::class, Pump::class],

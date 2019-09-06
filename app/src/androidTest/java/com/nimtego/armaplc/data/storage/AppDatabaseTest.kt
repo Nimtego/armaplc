@@ -5,6 +5,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.nimtego.armaplc.data.model.crashes.Crash
 import com.nimtego.armaplc.data.model.crashes.CrashType
+import com.nimtego.armaplc.data.model.crashes.CrashesDao
+import com.nimtego.armaplc.data.model.pump.PumpsDao
 import org.hamcrest.CoreMatchers
 import org.junit.After
 import org.junit.Assert.assertThat
@@ -13,7 +15,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import java.io.IOException
 import java.time.LocalDateTime
-import java.util.*
 
 @RunWith(AndroidJUnit4::class)
 class AppDatabaseTest {
@@ -44,6 +45,7 @@ class AppDatabaseTest {
         val crash = Crash(crashType = crashType.name,
                                  pumpId = 2,
                                  time = LocalDateTime.now().second.toLong())
+
         crashesDao.insertAll(crash)
         val crashItem = crashesDao.findByCrashType(crashType.name).first()
         assertThat(crashItem.crashType, CoreMatchers.equalTo(crash.crashType))

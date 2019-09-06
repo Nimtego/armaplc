@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.data.storage
+package com.nimtego.armaplc.data.model.crashes
 
 import androidx.room.*
 import com.nimtego.armaplc.data.model.crashes.Crash

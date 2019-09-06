@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.data.storage
+package com.nimtego.armaplc.data.model.pump
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
