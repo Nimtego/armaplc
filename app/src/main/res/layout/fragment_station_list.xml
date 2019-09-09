@@ -10,7 +10,7 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="List of station"/>
+            android:text="List of stationEntity"/>
     <Button
             android:id="@+id/station_button"
             android:layout_width="wrap_content"

@@ -1,24 +1,24 @@
 package com.nimtego.armaplc.data.model.pump
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.nimtego.armaplc.data.model.pump.Pump
+import io.reactivex.Completable
+import io.reactivex.Flowable
 
 @Dao
 interface PumpsDao {
 
     @Query("SELECT * FROM pump_table")
-    fun getAll(): LiveData<List<Pump>>
+    fun getAll(): Flowable<List<PumpEntity>>
 
-    @Query("SELECT * FROM pump_table WHERE station_id LIKE :stationId")
-    fun findByStationId(stationId: Long): Pump
+    @Query("SELECT * FROM pump_table WHERE station_id LIKE :id")
+    fun findByStationId(id: Long): Flowable<PumpEntity>
 
     @Insert
-    fun insertAll(vararg pump: Pump)
+    fun insertAll(vararg pumpEntity: PumpEntity): Completable
 
     @Delete
-    fun delete(pump: Pump)
+    fun delete(pumpEntity: PumpEntity): Completable
 
     @Update
-    fun update(vararg pump: Pump)
+    fun update(vararg pumpEntity: PumpEntity): Completable
 }

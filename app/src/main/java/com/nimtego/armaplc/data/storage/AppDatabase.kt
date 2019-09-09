@@ -4,18 +4,23 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.nimtego.armaplc.data.model.crashes.Crash
+import com.nimtego.armaplc.data.model.crashes.CrashEntity
 import com.nimtego.armaplc.data.model.crashes.CrashesDao
-import com.nimtego.armaplc.data.model.pump.Pump
+import com.nimtego.armaplc.data.model.pump.PumpEntity
 import com.nimtego.armaplc.data.model.pump.PumpsDao
+import com.nimtego.armaplc.data.model.stations.StationEntity
+import com.nimtego.armaplc.data.model.stations.StationsDao
 
 @Database(
-    entities = [Crash::class, Pump::class],
-    version = 1
+    entities = [CrashEntity::class,
+                PumpEntity::class,
+                StationEntity::class],
+    version = 1, exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase(){
     abstract fun crashesDao(): CrashesDao
     abstract fun pumpsDao(): PumpsDao
+    abstract fun stationDao(): StationsDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null

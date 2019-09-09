@@ -5,39 +5,36 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "stations_table")
-data class Station(
+data class StationEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Long,
+    val id: Long = 0,
 
     @ColumnInfo(name = "state")
-    val state: String,
+    val stationState: String = "",
 
     @ColumnInfo(name = "station_name")
-    val name: String,
+    val stationName: String,
 
     @ColumnInfo(name = "address")
-    val address: String,
+    val stationAddress: String = "",
 
-    @ColumnInfo(name = "address")
-    val countRequest: Int,
+    @ColumnInfo(name = "count_request")
+    val stationCountRequest: Int = 0,
 
     @ColumnInfo(name = "last_request_time")
-    val lastRequestTime: Long,
+    val stationLastRequestTime: Long = 0,
 
     @ColumnInfo(name = "last_response_time")
-    val lastResponseTime: Long,
-
-    @ColumnInfo(name = "list_pump_id")
-    val pumps: List<Long>,
+    val stationLastResponseTime: Long = 0,
 
     @ColumnInfo(name = "phone_number")
-    val phoneNumber: String,
+    val stationPhoneNumber: String,
 
     @ColumnInfo(name = "description")
-    val description: String,
+    val stationDescription: String = "",
 
     @ColumnInfo(name = "request_interval")
-    val requestInterval: Int
+    val stationRequestInterval: Int = 0
 )
 
 //val STATUS_CRASH = 2
@@ -51,7 +48,7 @@ data class Station(
 //private var _lastResponseTime: Long = 0
 //private var _name: String? = null
 //private var _phone: String? = null
-//private var _pumpModels: ArrayList<Pump>? = null
+//private var _pumpModels: ArrayList<PumpEntity>? = null
 //private var _pumpsCount: Int = 0
 //private var _requestInterval: Int = 0
 //private var _sms_status: String? = null

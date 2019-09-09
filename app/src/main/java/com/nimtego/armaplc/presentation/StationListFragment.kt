@@ -28,7 +28,7 @@ class StationListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         this.buttonStation = station_button
         this.buttonStation.setOnClickListener {
-            it?.let { Navigation.findNavController(it).navigate(R.id.stationFragment) }
+            it?.let { Navigation.findNavController(it).navigate(R.id.addStationFragment) }
         }
     }
 
