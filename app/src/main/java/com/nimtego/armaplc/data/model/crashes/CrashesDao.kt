@@ -13,10 +13,10 @@ interface CrashesDao {
     @Query("SELECT * FROM crash_table WHERE crash_type LIKE :crashType")
     fun findByCrashType(crashType: String): Flowable<List<CrashEntity>>
 
-    @Query("SELECT * FROM crash_table WHERE pump_id LIKE :pumpId")
-    fun findByPumpId(pumpId: Long): Flowable<List<CrashEntity>>
+    @Query("SELECT * FROM crash_table WHERE station_name LIKE :stationId")
+    fun findByPumpId(stationId: String): Flowable<List<CrashEntity>>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg crashEntities: CrashEntity): Completable
 
     @Delete

@@ -7,6 +7,6 @@ import io.reactivex.Flowable
 interface StationRepository {
     fun saveStation(station: StationViewModel): Completable
     fun getAllStations(): Flowable<List<StationViewModel>>
-    fun getStationById(id: Long): Flowable<StationViewModel>
+    fun getStationByName(name: String): Flowable<StationViewModel>
     fun removeStation(station: StationViewModel): Completable
 }

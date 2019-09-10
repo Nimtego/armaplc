@@ -23,8 +23,10 @@ class DiskStationDataSource(
         }
     }
 
-    override fun getStationById(id: Long): Flowable<StationViewModel> {
-        return this.stationDao.findByStationId(id).map { this.stationMapper.toStationViewModel(it) }
+    override fun getStationByName(name: String): Flowable<StationViewModel> {
+        return this.stationDao.findByStationName(name).map {
+            this.stationMapper.toStationViewModel(it)
+        }
     }
 
     override fun removeStation(station: StationViewModel): Completable {

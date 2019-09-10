@@ -1,6 +1,7 @@
 package com.nimtego.armaplc.data.mappers
 
 import com.nimtego.armaplc.data.model.stations.StationEntity
+import com.nimtego.armaplc.data.model.stations.StationModel
 import com.nimtego.armaplc.presentation.view_model.StationViewModel
 
 class StationMapper {
@@ -9,12 +10,14 @@ class StationMapper {
                              stationPhoneNumber = stationViewModel.phoneNumber)
     }
 
-    fun toStationViewModel(stations: StationEntity): StationViewModel {
-        return StationViewModel(nameStation = stations.stationName,
-                                phoneNumber = stations.stationPhoneNumber,
-                                address = stations.stationAddress,
-                                isPollActive = stations.stationState,
-                                pumpModels = "",
-                                requestInterval = 0)
+    fun toStationViewModel(stations: StationModel): StationViewModel {
+        val stationEntity = stations.stationEntity
+        val pumps = stations.pumpsList
+        return StationViewModel(nameStation = stationEntity.stationName,
+                                phoneNumber = stationEntity.stationPhoneNumber,
+                                address = stationEntity.stationAddress,
+                                isPollActive = stationEntity.stationState,
+                                pumpModels = pumps,
+                                requestInterval = stationEntity.stationRequestInterval)
     }
 }

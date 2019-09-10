@@ -7,17 +7,19 @@ import io.reactivex.Flowable
 @Dao
 interface StationsDao {
 
+    @Transaction
     @Query("SELECT * FROM stations_table")
-    fun getAll(): Flowable<List<StationEntity>>
+    fun getAll(): Flowable<List<StationModel>>
 
-    @Query("SELECT * FROM stations_table WHERE id LIKE :stationId")
-    fun findByStationId(stationId: Long): Flowable<StationEntity>
+    @Transaction
+    @Query("SELECT * FROM stations_table WHERE stationName LIKE :stationName")
+    fun findByStationName(stationName: String): Flowable<StationModel>
 
-    @Query("SELECT * FROM stations_table WHERE station_name LIKE :stationName")
-    fun findByStationName(stationName: String): Flowable<StationEntity>
-
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg stationEntity: StationEntity): Completable
+
+    @Query("DELETE from stations_table WHERE stationName IN (:name)")
+    fun deleteByName(name: String): Completable
 
     @Delete
     fun delete(stationEntity: StationEntity): Completable

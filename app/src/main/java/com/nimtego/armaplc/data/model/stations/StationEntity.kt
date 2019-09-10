@@ -6,14 +6,12 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "stations_table")
 data class StationEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long = 0,
+
+    @PrimaryKey
+    val stationName: String,
 
     @ColumnInfo(name = "state")
     val stationState: String = "",
-
-    @ColumnInfo(name = "station_name")
-    val stationName: String,
 
     @ColumnInfo(name = "address")
     val stationAddress: String = "",

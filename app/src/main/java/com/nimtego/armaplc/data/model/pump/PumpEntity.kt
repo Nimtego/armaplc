@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "pump_table")
 data class PumpEntity(@PrimaryKey(autoGenerate = true)
                  var id: Long = 0,
-                      @ColumnInfo(name = "station_id")
-                 var stationId: Long,
-                      @ColumnInfo(name = "time")
-                 var name: String)
+                      @ColumnInfo(name = "station_name")
+                 var stationName: String,
+                      @ColumnInfo(name = "type_pump")
+                 var typePump: String)

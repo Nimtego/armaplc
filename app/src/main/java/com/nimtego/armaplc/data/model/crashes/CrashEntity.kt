@@ -10,7 +10,7 @@ data class CrashEntity(@PrimaryKey(autoGenerate = true)
                        var id: Long = 0,
                        @ColumnInfo(name = "crash_type")
                        var crashType: String,
-                       @ColumnInfo(name = "pump_id")
-                       var pumpId: Long,
+                       @ColumnInfo(name = "station_name")
+                       var stationName: String,
                        @ColumnInfo(name = "time")
                        var time: Long)

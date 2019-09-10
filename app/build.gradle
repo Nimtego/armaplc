@@ -24,6 +24,7 @@ android {
 
 dependencies {
 
+    def lifecycle_version = "2.1.0"
     def nav_version = "2.0.0"
     def room_version = "2.1.0"
 
@@ -56,6 +57,9 @@ dependencies {
 
     //ahbottom
     implementation 'com.aurelhubert:ahbottomnavigation:2.3.4'
+
+    //lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
     //room
     implementation "androidx.room:room-rxjava2:$room_version"
