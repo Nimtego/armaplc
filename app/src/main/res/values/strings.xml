@@ -6,4 +6,7 @@
     <string name="dash_board">Dash board</string>
     <string name="stations">Stations</string>
     <string name="more">More</string>
+    <string name="message_error_load">"Error"</string>
+    <string name="station_name">Station name</string>
+    <string name="station_add">Station add</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation
+package com.nimtego.armaplc.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

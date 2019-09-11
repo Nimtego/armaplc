@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation
+package com.nimtego.armaplc.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -4,18 +4,31 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="@color/click_accent"
-             tools:context=".presentation.StationListFragment">
+             tools:context=".presentation.fragments.StationListFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="List of stationEntity"/>
-    <Button
-            android:id="@+id/station_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Station"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="List of stationEntity"/>
+
+        <Button
+                android:id="@+id/station_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Station"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/station_list_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
 
 </FrameLayout>
