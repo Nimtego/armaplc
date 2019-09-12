@@ -6,19 +6,30 @@ import com.nimtego.armaplc.presentation.fragments.StationListFragment
 
 import dagger.Component
 import javax.inject.Singleton
+import android.app.Application
+import com.nimtego.armaplc.presentation.fragments.AddStationFragment
+import dagger.BindsInstance
+
+
 
 //@Singleton
 //@Component(modules = [PresenterModule::class,
 //    SystemModule::class,
 //    NavigationModule::class])
 @Singleton
-@Component(modules = [ContextModule::class])
+@Component(modules = [ViewModelModule::class])
 interface ApplicationComponent {
 
-    fun inject(activity: AppActivity)
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun withApplication(application: Application): Builder
 
-    fun inject(fragment: DashBoardFragment)
+        fun build(): ApplicationComponent
+    }
 
-    fun inject(fragment: StationListFragment)
+    fun inject(stationListFragment: StationListFragment)
+    fun inject(addStationFragment: AddStationFragment)
+
 
 }

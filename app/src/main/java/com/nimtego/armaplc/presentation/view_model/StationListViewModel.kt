@@ -5,7 +5,7 @@ import com.nimtego.armaplc.domain.interactors.StationInteractor
 import com.nimtego.armaplc.presentation.model.StationsContainer
 import javax.inject.Inject
 
-class StationListViewModel @Inject constructor(
+class StationListViewModel @Inject constructor (
     val interactor: StationInteractor
 ) : ViewModel(), LifecycleObserver {
 

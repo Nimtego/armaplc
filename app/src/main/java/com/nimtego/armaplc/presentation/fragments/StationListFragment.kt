@@ -2,12 +2,12 @@ package com.nimtego.armaplc.presentation.fragments
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
@@ -17,19 +17,28 @@ import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
 import com.nimtego.armaplc.presentation.StationsListAdapter
 import com.nimtego.armaplc.presentation.model.StationsContainer
+import com.nimtego.armaplc.presentation.view_model.AppViewModelFactory
 import com.nimtego.armaplc.presentation.view_model.StationListViewModel
 import com.nimtego.armaplc.presentation.view_model.StationViewModel
 import com.nimtego.armaplc.presentation.view_model.ViewState
 import kotlinx.android.synthetic.main.fragment_station_list.*
+import javax.inject.Inject
 
 
-class StationListFragment : Fragment() {
+class StationListFragment : BaseFragment() {
+
+    private val stationListViewModel: StationListViewModel by lazy {
+        ViewModelProviders.of(this, viewModelFactory)
+            .get(StationListViewModel::class.java)
+    }
 
     private lateinit var buttonStation: Button
     private lateinit var listStationsRv: RecyclerView
 
-    private val viewModel: StationListViewModel by lazy {
-        ViewModelProviders.of(this).get(StationListViewModel::class.java)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        App.INSTANCE.getAppComponent().inject(this)
+        super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -45,12 +54,6 @@ class StationListFragment : Fragment() {
         initView()
         updateStation(StationsContainer(emptyList()))
         initStation()
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        App.INSTANCE.getAppComponent().inject(this)
-        super.onCreate(savedInstanceState)
-
     }
 
     private fun initView() {
@@ -82,7 +85,7 @@ class StationListFragment : Fragment() {
 
 
     private fun initStation() {
-        viewModel.getState().observe(this, Observer { viewState ->
+        this.stationListViewModel.getState().observe(this, Observer { viewState ->
             viewState.let {
                 when (viewState.status) {
                     ViewState.Status.SUCCESS -> updateStation(viewState.data)
@@ -95,6 +98,6 @@ class StationListFragment : Fragment() {
                 }
             }
         })
-        lifecycle.addObserver(viewModel)
+        lifecycle.addObserver(stationListViewModel)
     }
 }

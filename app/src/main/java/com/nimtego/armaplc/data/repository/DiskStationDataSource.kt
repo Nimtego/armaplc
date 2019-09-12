@@ -5,8 +5,9 @@ import com.nimtego.armaplc.data.storage.AppDatabase
 import com.nimtego.armaplc.presentation.view_model.StationViewModel
 import io.reactivex.Completable
 import io.reactivex.Flowable
+import javax.inject.Inject
 
-class DiskStationDataSource(
+class DiskStationDataSource @Inject constructor(
     appDataBase: AppDatabase,
     private val stationMapper: StationMapper
 ) : StationRepository {
