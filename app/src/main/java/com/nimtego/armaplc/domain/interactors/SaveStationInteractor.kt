@@ -1,5 +1,6 @@
 package com.nimtego.armaplc.domain.interactors
 
+import com.nimtego.armaplc.data.repository.DiskStationDataSource
 import com.nimtego.armaplc.data.repository.StationRepository
 import com.nimtego.armaplc.presentation.SchedulersProvider
 import com.nimtego.armaplc.presentation.view_model.StationViewModel
@@ -7,8 +8,8 @@ import io.reactivex.Completable
 import javax.inject.Inject
 
 class SaveStationInteractor @Inject constructor(
-    private val repository: StationRepository,
-    val schedulersProvider: SchedulersProvider
+    private val repository: DiskStationDataSource,
+    private val schedulersProvider: SchedulersProvider
 ) : CompletableInteractor<StationViewModel>(schedulersProvider) {
 
     override fun providePostExecutionThread() = this.schedulersProvider.ui()

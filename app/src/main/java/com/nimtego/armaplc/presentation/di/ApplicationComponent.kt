@@ -1,15 +1,12 @@
 package com.nimtego.armaplc.presentation.di
 
-import com.nimtego.armaplc.presentation.activity.AppActivity
-import com.nimtego.armaplc.presentation.fragments.DashBoardFragment
+import android.app.Application
+import android.content.Context
+import com.nimtego.armaplc.presentation.fragments.AddStationFragment
 import com.nimtego.armaplc.presentation.fragments.StationListFragment
-
+import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
-import android.app.Application
-import com.nimtego.armaplc.presentation.fragments.AddStationFragment
-import dagger.BindsInstance
-
 
 
 //@Singleton
@@ -17,7 +14,12 @@ import dagger.BindsInstance
 //    SystemModule::class,
 //    NavigationModule::class])
 @Singleton
-@Component(modules = [ViewModelModule::class])
+@Component(
+    modules = [ViewModelModule::class,
+               DomainModule::class,
+               DataModule::class,
+               DataBaseModule::class]
+)
 interface ApplicationComponent {
 
     @Component.Builder

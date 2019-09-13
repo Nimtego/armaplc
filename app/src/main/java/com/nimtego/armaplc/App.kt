@@ -16,7 +16,10 @@ class App : Application() {
 
     private fun initAppComponent() {
         this.appComponent =
-            DaggerApplicationComponent.builder().build()
+            DaggerApplicationComponent
+                .builder()
+                .withApplication(this)
+                .build()
     }
 
     companion object {

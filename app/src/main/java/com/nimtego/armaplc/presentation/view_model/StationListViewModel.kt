@@ -31,6 +31,7 @@ class StationListViewModel @Inject constructor (
         }
     }
 
+
     override fun onCleared() {
         super.onCleared()
         interactor.dispose()

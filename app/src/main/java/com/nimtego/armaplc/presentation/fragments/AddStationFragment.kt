@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
 import com.nimtego.armaplc.presentation.view_model.AddStationViewModel
 import com.nimtego.armaplc.presentation.view_model.StationViewModel
@@ -25,6 +26,13 @@ class AddStationFragment : BaseFragment() {
             .get(AddStationViewModel::class.java)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        App.INSTANCE.getAppComponent().inject(this)
+        super.onCreate(savedInstanceState)
+
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,9 +46,9 @@ class AddStationFragment : BaseFragment() {
         this.addButton.setOnClickListener {
             this.viewModel.addStation(
                 StationViewModel(
-                    nameStation = "Test name ${Random(100)}",
-                    address = "Test ${Random(100)}",
-                    phoneNumber = "+7 890 ${Random(100)}",
+                    nameStation = "Test name ${(1 until 120).random()}",
+                    address = "Test ${(1 until 120).random()}",
+                    phoneNumber = "+7 890 ${(1 until 120).random()}",
                     isPollActive = "Test"
                 )
             )

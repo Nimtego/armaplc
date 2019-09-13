@@ -5,24 +5,17 @@ import com.nimtego.armaplc.data.repository.DiskStationDataSource
 import com.nimtego.armaplc.data.repository.StationRepository
 import com.nimtego.armaplc.data.storage.AppDatabase
 import com.nimtego.armaplc.presentation.SchedulersProvider
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
 @Module(includes = [DataBaseModule::class])
-class DataModule {
+abstract class DataModule {
 
-    @Provides
+    @Binds
     @Singleton
-    internal fun provideStationRepository(
-        appDatabase: AppDatabase,
-        mapper: StationMapper
-    ): StationRepository {
-        return DiskStationDataSource(appDatabase, mapper)
-    }
+    abstract fun provideStationRepository(repository:  DiskStationDataSource): StationRepository
 
-    @Provides
-    @Singleton
-    internal fun provideMapper() = StationMapper()
 
 }
