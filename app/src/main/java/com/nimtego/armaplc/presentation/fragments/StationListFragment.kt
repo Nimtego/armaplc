@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
@@ -17,12 +16,10 @@ import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
 import com.nimtego.armaplc.presentation.StationsListAdapter
 import com.nimtego.armaplc.presentation.model.StationsContainer
-import com.nimtego.armaplc.presentation.view_model.AppViewModelFactory
 import com.nimtego.armaplc.presentation.view_model.StationListViewModel
 import com.nimtego.armaplc.presentation.view_model.StationViewModel
 import com.nimtego.armaplc.presentation.view_model.ViewState
 import kotlinx.android.synthetic.main.fragment_station_list.*
-import javax.inject.Inject
 
 
 class StationListFragment : BaseFragment() {
@@ -41,9 +38,10 @@ class StationListFragment : BaseFragment() {
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_station_list, container, false)
 
@@ -64,9 +62,11 @@ class StationListFragment : BaseFragment() {
         this.listStationsRv = station_list_rv
         this.listStationsRv.apply {
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(this@StationListFragment.context,
+            layoutManager = LinearLayoutManager(
+                this@StationListFragment.context,
                 RecyclerView.VERTICAL,
-                false)
+                false
+            )
         }
 
     }
@@ -92,9 +92,11 @@ class StationListFragment : BaseFragment() {
                     ViewState.Status.LOADING -> { /* TODO */
                     }
                     ViewState.Status.ERROR ->
-                        Toast.makeText(requireContext(),
+                        Toast.makeText(
+                            requireContext(),
                             R.string.message_error_load,
-                            Toast.LENGTH_SHORT).show()
+                            Toast.LENGTH_SHORT
+                        ).show()
                 }
             }
         })

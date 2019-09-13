@@ -8,7 +8,7 @@ import io.reactivex.Flowable
 import javax.inject.Inject
 
 class StationInteractor @Inject constructor(
-    private val repository: DiskStationDataSource,
+    private val repository: StationRepository,
     private val schedulersProvider: SchedulersProvider
 ): FlowableInteractor<List<StationViewModel>, String?>(schedulersProvider) {
 

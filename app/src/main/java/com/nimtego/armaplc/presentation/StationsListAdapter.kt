@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nimtego.armaplc.R
 import com.nimtego.armaplc.presentation.view_model.StationViewModel
+import java.lang.StringBuilder
 
 class StationsListAdapter(
     val stationModel: List<StationViewModel>,
@@ -29,7 +30,16 @@ class StationsListAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.stationName.text = this.stationModel[position].nameStation
+        val st = StringBuilder().apply {
+            append(stationModel[position].nameStation)
+            append("\n")
+            append(stationModel[position].pumpCount)
+            append("\n")
+            append(stationModel[position].pumpModels)
+            append("\n")
+            append(stationModel[position].phoneNumber)
+        }
+        holder.stationName.text = st.toString()
     }
 
     override fun getItemCount(): Int = stationModel.size

@@ -8,7 +8,7 @@ import io.reactivex.Completable
 import javax.inject.Inject
 
 class SaveStationInteractor @Inject constructor(
-    private val repository: DiskStationDataSource,
+    private val repository: StationRepository,
     private val schedulersProvider: SchedulersProvider
 ) : CompletableInteractor<StationViewModel>(schedulersProvider) {
 
