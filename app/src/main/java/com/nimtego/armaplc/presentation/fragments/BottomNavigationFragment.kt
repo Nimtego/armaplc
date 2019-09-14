@@ -13,7 +13,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter
 import com.nimtego.armaplc.R
 import kotlinx.android.synthetic.main.bottom_navigation_fragment.*
 
-class BottomNavigationFragment : Fragment() {
+class BottomNavigationFragment : Fragment(), BackButtonListener {
 
     private lateinit var bottomNavigationView: AHBottomNavigation
     private lateinit var bottomNavController: NavController
@@ -64,5 +64,7 @@ class BottomNavigationFragment : Fragment() {
 
     }
 
-
+    override fun onBackPressed() {
+        this.bottomNavController.popBackStack()
+    }
 }

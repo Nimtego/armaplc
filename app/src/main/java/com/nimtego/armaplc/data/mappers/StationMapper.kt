@@ -6,18 +6,23 @@ import com.nimtego.armaplc.presentation.view_model.StationViewModel
 
 class StationMapper {
     fun stationToStationEntity(stationViewModel: StationViewModel): StationEntity {
-        return StationEntity(stationName = stationViewModel.nameStation,
-                             stationPhoneNumber = stationViewModel.phoneNumber)
+        return StationEntity(
+            stationName = stationViewModel.nameStation,
+            stationPhoneNumber = stationViewModel.phoneNumber,
+            stationAddress = stationViewModel.address
+        )
     }
 
     fun toStationViewModel(stations: StationModel): StationViewModel {
         val stationEntity = stations.stationEntity
         val pumps = stations.pumpsList
-        return StationViewModel(nameStation = stationEntity.stationName,
-                                phoneNumber = stationEntity.stationPhoneNumber,
-                                address = stationEntity.stationAddress,
-                                isPollActive = stationEntity.stationState,
-                                pumpModels = pumps,
-                                requestInterval = stationEntity.stationRequestInterval)
+        return StationViewModel(
+            nameStation = stationEntity.stationName,
+            phoneNumber = stationEntity.stationPhoneNumber,
+            address = stationEntity.stationAddress,
+            isPollActive = stationEntity.stationState,
+            pumpModels = pumps,
+            requestInterval = stationEntity.stationRequestInterval
+        )
     }
 }

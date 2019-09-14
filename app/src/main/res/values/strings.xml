@@ -1,12 +1,19 @@
 <resources>
     <string name="app_name">armaplc</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dash_board">Dash board</string>
     <string name="stations">Stations</string>
     <string name="more">More</string>
     <string name="message_error_load">"Error"</string>
-    <string name="station_name">Station name</string>
     <string name="station_add">Station add</string>
+    <string name="station_address">Station address</string>
+    <string name="station_name">Station name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="address">Address</string>
+    <string name="pump_model">Pump model</string>
+    <string name="request_interval">Request interval</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="poll_active">Poll active</string>
 </resources>

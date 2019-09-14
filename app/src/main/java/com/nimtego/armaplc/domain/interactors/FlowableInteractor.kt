@@ -23,8 +23,8 @@ abstract class FlowableInteractor<T, in Params> constructor(
             .subscribeOn(scheduler.io())
             .observeOn(providePostExecutionThread())
         addDisposable(flowable.subscribe(
-            { t: T -> onNext.invoke(t) },
-            { error -> onError.invoke(error) },
+            { t: T -> onNext(t) },
+            { error -> onError(error) },
             { onComplete?.invoke() }
         ))
     }

@@ -8,4 +8,29 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="HeaderTextStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/text_view_size_header</item>
+        <item name="android:textColor">@color/text_view_header_color</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="TextStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/text_view_size_default</item>
+        <item name="android:textColor">@color/text_view_default_color</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="PrimaryButton" parent="Theme.AppCompat">
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="PrimaryFlatButton" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+
 </resources>

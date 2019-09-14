@@ -4,71 +4,111 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".presentation.fragments.AddStationFragment">
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_extra_large"
+                android:paddingStart="@dimen/padding_extra_medium"
+                android:paddingEnd="@dimen/padding_extra_medium"
+                android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            <EditText
+                    android:id="@+id/station_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_shape"
+                    android:layout_marginBottom="@dimen/padding_extra_medium"
+                    android:hint="@string/station_name"/>
+            <EditText
+                    android:id="@+id/station_phone_number_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_shape"
+                    android:layout_marginBottom="@dimen/padding_extra_medium"
+                    android:hint="@string/phone_number"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add stationEntity fragment"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Station name"/>
-        <EditText
-                android:id="@+id/station_name_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone number"/>
-        <EditText
-                android:id="@+id/station_phone_number_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Address"/>
-        <EditText
-                android:id="@+id/address_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pump model"/>
-        <EditText
-                android:id="@+id/pump_model_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Request interval"/>
-        <EditText
-                android:id="@+id/request_interval_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Poll active"/>
-        <CheckBox
-                android:id="@+id/poll_active_check_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/add_station_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Add"/>
-    </LinearLayout>
+            <EditText
+                    android:id="@+id/station_address_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_shape"
+                    android:layout_marginBottom="@dimen/padding_extra_medium"
+                    android:hint="@string/address"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_marginBottom="@dimen/padding_extra_medium">
+                <EditText
+                        android:id="@+id/station_pump_model_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/padding_extra_medium"
+                        android:background="@drawable/rounded_shape"
+                        android:hint="@string/pump_model"/>
+                <NumberPicker
+                        android:id="@+id/pumps_number_picker"
+                        android:layout_width="16dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="0.3"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="vertical"/>
+
+            </LinearLayout>
+
+            <EditText
+                    android:id="@+id/station_request_interval_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_shape"
+                    android:inputType="number"
+                    android:layout_marginBottom="@dimen/padding_extra_medium"
+                    android:hint="@string/request_interval"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/padding_extra_medium"
+                    android:gravity="end">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/poll_active"/>
+                <CheckBox
+                        android:id="@+id/poll_active_check_box"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_extra_medium"
+                    android:gravity="end">
+
+                <Button
+                        android:id="@+id/button_cancel_add_station"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/cancel"
+                        android:theme="@style/PrimaryFlatButton"/>
+
+                <Button
+                        android:id="@+id/add_station_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/add"
+                        android:theme="@style/PrimaryButton"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
