@@ -2,14 +2,20 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#A5342F</color>
+
+    <!--Text view-->
+    <color name="text_view_header_color">#ff32404f</color>
+    <color name="text_view_default_color">#364B5A</color>
+
 
     <color name="click_accent">#9f5454</color>
     <color name="color_vendor_dark_grey_blue">#ff32404f</color>
 
+
     <color name="color_background_dark">#fff6f6f6</color>
 
-    <color name="color_navigation_item_inactive">@color/color_vendor_dark_grey_blue</color>
+    <color name="color_navigation_item_inactive">@color/colorPrimaryDark</color>
     <color name="color_navigation_item_active">@color/click_accent</color>
     <color name="color_bottom_sheet_navigation_bar">@android:color/white</color>
 </resources>

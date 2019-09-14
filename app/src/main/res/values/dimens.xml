@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="android_status_bar_height">24dp</dimen>
+
+    <!-- Text size -->
+    <dimen name="text_view_size_default">16sp</dimen>
+    <dimen name="text_view_size_header">18sp</dimen>
+
+    <!-- rounded -->
+    <dimen name="rounded_edit_text">16sp</dimen>
+    <dimen name="value_text_view">8sp</dimen>
+
+    <!-- Padding's -->
+    <dimen name="padding_extra_huge">28dp</dimen>
+    <dimen name="padding_huge">24dp</dimen>
+    <dimen name="padding_extra_large">20dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_extra_medium">14dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_extra_small">4dp</dimen>
+    <dimen name="padding_micro">2dp</dimen>
+
 </resources>

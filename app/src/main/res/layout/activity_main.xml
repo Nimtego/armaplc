@@ -5,7 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.nimtego.armaplc.AppActivity">
+              tools:context="com.nimtego.armaplc.presentation.activity.AppActivity">
 
     <FrameLayout
             android:id="@+id/status_bar"
@@ -18,11 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/click_accent"
-                android:text="AppActivity"/>
         <fragment
                 android:id="@+id/app_nav_host_fragment"
                 android:name="androidx.navigation.fragment.NavHostFragment"
