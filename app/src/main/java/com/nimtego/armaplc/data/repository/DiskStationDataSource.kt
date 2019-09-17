@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class DiskStationDataSource @Inject constructor(
     appDataBase: AppDatabase,
-    val stationMapper: StationMapper
+    private val stationMapper: StationMapper
 ) : StationRepository {
 
     private val stationDao = appDataBase.stationDao()

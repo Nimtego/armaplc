@@ -1,6 +1,5 @@
 package com.nimtego.armaplc.domain.interactors
 
-import com.nimtego.armaplc.data.repository.DiskStationDataSource
 import com.nimtego.armaplc.data.repository.StationRepository
 import com.nimtego.armaplc.presentation.SchedulersProvider
 import com.nimtego.armaplc.presentation.view_model.StationViewModel

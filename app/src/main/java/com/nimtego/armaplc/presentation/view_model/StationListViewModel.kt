@@ -6,7 +6,7 @@ import com.nimtego.armaplc.presentation.model.StationsContainer
 import javax.inject.Inject
 
 class StationListViewModel @Inject constructor (
-    val interactor: StationInteractor
+    private val interactor: StationInteractor
 ) : ViewModel(), LifecycleObserver {
 
     private val state: MutableLiveData<ViewState<StationsContainer>> = MutableLiveData()
