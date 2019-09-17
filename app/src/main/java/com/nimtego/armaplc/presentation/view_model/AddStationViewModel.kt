@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nimtego.armaplc.domain.interactors.SaveStationInteractor
+import com.nimtego.armaplc.presentation.model.StationModel
 import javax.inject.Inject
 
 class AddStationViewModel @Inject constructor(
@@ -13,7 +14,7 @@ class AddStationViewModel @Inject constructor(
 
     private val saveOperation: MutableLiveData<LiveEvent<ViewState<Unit>>> = MutableLiveData()
 
-//    fun getState(): LiveData<ViewState<StationViewModel>> {
+//    fun getState(): LiveData<ViewState<StationModelEntity>> {
 //        return state
 //    }
 
@@ -21,7 +22,7 @@ class AddStationViewModel @Inject constructor(
         return saveOperation
     }
 
-    fun addStation(station: StationViewModel) {
+    fun addStation(station: StationModel) {
         this.saveStationInteractor.execute(station,
             { saveOperation.postValue(LiveEvent(ViewState(ViewState.Status.SUCCESS))) },
             { saveOperation.postValue(LiveEvent(ViewState(ViewState.Status.ERROR, error = it))) }

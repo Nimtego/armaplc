@@ -5,7 +5,7 @@ import androidx.room.Relation
 import com.nimtego.armaplc.data.model.crashes.CrashEntity
 import com.nimtego.armaplc.data.model.pump.PumpEntity
 
-class StationModel() {
+class StationModelEntity {
     @Embedded
     lateinit var stationEntity: StationEntity
 

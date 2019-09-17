@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
 import com.nimtego.armaplc.presentation.view_model.AddStationViewModel
-import com.nimtego.armaplc.presentation.view_model.StationViewModel
+import com.nimtego.armaplc.presentation.model.StationModel
 import com.nimtego.armaplc.presentation.view_model.ViewState
 import kotlinx.android.synthetic.main.fragment_add_station.*
 
@@ -84,13 +84,15 @@ class AddStationFragment : BaseFragment() {
         }
     }
 
-    private fun generateStation(): StationViewModel {
-        return StationViewModel(
+    private fun generateStation(): StationModel {
+        //todo take away this
+        val checkRequestInterval = this.requestInterval.text.ifEmpty { 0 }.toString().toInt()
+        return StationModel(
             nameStation = this.stationName.text.toString(),
             address = this.stationAddress.text.toString(),
             phoneNumber = this.phoneNumber.text.toString(),
             pumpCount = this.pumpNumberPicker.value,
-            requestInterval = this.requestInterval.text.toString().toInt(),
+            requestInterval = checkRequestInterval,
             isPollActive = "1"
         )
     }
@@ -99,7 +101,7 @@ class AddStationFragment : BaseFragment() {
         //todo
     }
 
-    fun initAddStationEvent() {
+    private fun initAddStationEvent() {
         this.viewModel.saveStation().observe(this, Observer { event ->
             event.consumeEvent()?.let { viewState ->
                 when (viewState.status) {
@@ -110,9 +112,10 @@ class AddStationFragment : BaseFragment() {
                         ).show()
                     }
                     else -> {
+                        //todo screen: show required fields
                         Toast.makeText(
                             requireContext(),
-                            R.string.message_error_load, Toast.LENGTH_SHORT
+                            "${viewState.error?.message}", Toast.LENGTH_SHORT
                         ).show()
                     }
                 }

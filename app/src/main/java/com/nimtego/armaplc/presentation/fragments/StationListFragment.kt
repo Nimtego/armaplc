@@ -17,7 +17,7 @@ import com.nimtego.armaplc.R
 import com.nimtego.armaplc.presentation.StationsListAdapter
 import com.nimtego.armaplc.presentation.model.StationsContainer
 import com.nimtego.armaplc.presentation.view_model.StationListViewModel
-import com.nimtego.armaplc.presentation.view_model.StationViewModel
+import com.nimtego.armaplc.presentation.model.StationModel
 import com.nimtego.armaplc.presentation.view_model.ViewState
 import kotlinx.android.synthetic.main.fragment_station_list.*
 
@@ -73,13 +73,13 @@ class StationListFragment : BaseFragment() {
 
     private fun updateStation(stationModel: StationsContainer?) {
         stationModel?.let {
-            this.listStationsRv.adapter = StationsListAdapter(it.stationsViewModel) {
+            this.listStationsRv.adapter = StationsListAdapter(it.stationsModel) {
                 stationClick(it)
             }
         }
     }
 
-    private fun stationClick(stationModel: StationViewModel) {
+    private fun stationClick(stationModel: StationModel) {
         //todo
     }
 

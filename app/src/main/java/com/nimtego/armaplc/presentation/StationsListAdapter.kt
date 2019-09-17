@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nimtego.armaplc.R
-import com.nimtego.armaplc.presentation.view_model.StationViewModel
+import com.nimtego.armaplc.presentation.model.StationModel
 
 class StationsListAdapter(
-    private val stationModel: List<StationViewModel>,
-    private val onClick: (StationViewModel) -> Unit
+    private val stationModel: List<StationModel>,
+    private val onClick: (StationModel) -> Unit
 ) : RecyclerView.Adapter<StationsListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
