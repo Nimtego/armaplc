@@ -9,11 +9,11 @@ interface StationsDao {
 
     @Transaction
     @Query("SELECT * FROM stations_table")
-    fun getAll(): Flowable<List<StationModel>>
+    fun getAll(): Flowable<List<StationModelEntity>>
 
     @Transaction
     @Query("SELECT * FROM stations_table WHERE stationName LIKE :stationName")
-    fun findByStationName(stationName: String): Flowable<StationModel>
+    fun findByStationName(stationName: String): Flowable<StationModelEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg stationEntity: StationEntity): Completable
