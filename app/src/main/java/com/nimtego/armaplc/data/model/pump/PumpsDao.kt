@@ -10,8 +10,8 @@ interface PumpsDao {
     @Query("SELECT * FROM pump_table")
     fun getAll(): Flowable<List<PumpEntity>>
 
-    @Query("SELECT * FROM pump_table WHERE station_name LIKE :id")
-    fun findByStationId(id: String): Flowable<List<PumpEntity>>
+    @Query("SELECT * FROM pump_table WHERE station_name LIKE :name")
+    fun findByStationName(name: String): Flowable<List<PumpEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg pumpEntity: PumpEntity): Completable
