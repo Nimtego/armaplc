@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.NumberPicker
-import android.widget.Toast
+import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.nimtego.armaplc.App
@@ -28,6 +25,7 @@ class AddStationFragment : BaseFragment() {
     private lateinit var stationAddress: EditText
     private lateinit var pumpModel: EditText
     private lateinit var requestInterval: EditText
+    private lateinit var pollActiveCheckBox: CheckBox
 
     private val viewModel: AddStationViewModel by lazy {
         ViewModelProviders.of(this, viewModelFactory)
@@ -74,8 +72,10 @@ class AddStationFragment : BaseFragment() {
     }
 
     private fun initButtons() {
+        this.pollActiveCheckBox = poll_active_check_box
         this.addButton = add_station_button
         this.cancelButton = button_cancel_add_station
+
         this.addButton.setOnClickListener {
             this.viewModel.addStation(generateStation())
         }
@@ -93,7 +93,7 @@ class AddStationFragment : BaseFragment() {
             phoneNumber = this.phoneNumber.text.toString(),
             pumpCount = this.pumpNumberPicker.value,
             requestInterval = checkRequestInterval,
-            isPollActive = "1"
+            isPollActive = this.pollActiveCheckBox.isActivated
         )
     }
 
