@@ -126,6 +126,7 @@ class AddStationFragment : BaseFragment() {
                             requireContext(),
                             R.string.station_add, Toast.LENGTH_SHORT
                         ).show()
+                        this@AddStationFragment.onBackPressed()
                     }
                     else -> {
                         //todo screen: show required fields

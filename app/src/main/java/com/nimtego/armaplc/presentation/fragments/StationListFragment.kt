@@ -57,7 +57,11 @@ class StationListFragment : BaseFragment() {
     private fun initView() {
         this.buttonStation = station_button
         this.buttonStation.setOnClickListener {
-            it?.let { Navigation.findNavController(it).navigate(R.id.addStationFragment) }
+            it?.let {
+                val navigator = Navigation.findNavController(it)
+                navigator.saveState()
+                navigator.navigate(R.id.addStationFragment)
+            }
         }
         this.listStationsRv = station_list_rv
         this.listStationsRv.apply {
