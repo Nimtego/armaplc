@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation.fragments
+package com.nimtego.armaplc.presentation.fragments.navigation
 
 
 import android.os.Bundle
@@ -11,7 +11,8 @@ import androidx.navigation.Navigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter
 import com.nimtego.armaplc.R
-import kotlinx.android.synthetic.main.bottom_navigation_fragment.*
+import com.nimtego.armaplc.presentation.fragments.BackButtonListener
+import kotlinx.android.synthetic.main.nav_bottom_fragment.*
 
 class BottomNavigationFragment : Fragment(), BackButtonListener {
 
@@ -22,19 +23,20 @@ class BottomNavigationFragment : Fragment(), BackButtonListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.bottom_navigation_fragment, container, false)
+        return inflater.inflate(R.layout.nav_bottom_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //this.bottomNavController = Navigation.findNavController(view)
         this.bottomNavController = Navigation.findNavController(view.findViewById(R.id.bottom_bar_nav_host_fragment))
+        this.bottomNavController.navigate(R.id.dashboard_nav_graph)
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         this.bottomNavigationView = bottom_navigation_view
         initBottomNavigation()
-        this.bottomNavController.navigate(R.id.dashBoardFragment)
+        //this.bottomNavController.navigate(R.id.dashBoardNavFragment)
     }
 
     private fun initBottomNavigation() {
@@ -57,9 +59,9 @@ class BottomNavigationFragment : Fragment(), BackButtonListener {
 
     private fun selectTab(number: Int) {
         when (number) {
-            0 -> bottomNavController.navigate(R.id.dashBoardFragment)
-            1 -> bottomNavController.navigate(R.id.stationListFragment)
-            2 -> bottomNavController.navigate(R.id.settingsFragment)
+            0 -> bottomNavController.navigate(R.id.dashboard_nav_graph)
+            1 -> bottomNavController.navigate(R.id.stations_list_nav_graph)
+            2 -> bottomNavController.navigate(R.id.options_nav_graph)
         }
 
     }
