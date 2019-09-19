@@ -8,4 +8,4 @@ data class StationModel(val nameStation: String,
                         val pumpCount: Int = 1,
                         val pumpModels: List<PumpEntity> = listOf(),
                         val requestInterval: Int = 0,
-                        val isPollActive: String)
+                        val isPollActive: Boolean)

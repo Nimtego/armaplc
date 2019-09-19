@@ -1,18 +1,19 @@
 package com.nimtego.armaplc.data.repository
 
 import com.nimtego.armaplc.data.mappers.StationMapper
-import com.nimtego.armaplc.data.storage.AppDatabase
+import com.nimtego.armaplc.data.storage.StationDatabase
 import com.nimtego.armaplc.presentation.model.StationModel
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import javax.inject.Inject
 
-class DiskStationDataSource @Inject constructor(
-    appDataBase: AppDatabase,
+class StationDataSource @Inject constructor(
+    stationDataBase: StationDatabase,
     private val stationMapper: StationMapper
 ) : StationRepository {
 
-    private val stationDao = appDataBase.stationDao()
+    private val stationDao = stationDataBase.stationDao()
+    private val sensorDao = stationDataBase.sensorDao()
 
     override fun saveStation(station: StationModel): Completable {
         return this.stationDao.insertAll(this.stationMapper.stationToStationEntity(station))

@@ -4,6 +4,7 @@ import androidx.room.Embedded
 import androidx.room.Relation
 import com.nimtego.armaplc.data.model.crashes.CrashEntity
 import com.nimtego.armaplc.data.model.pump.PumpEntity
+import com.nimtego.armaplc.data.model.sensors.SensorStateEntity
 
 class StationModelEntity {
     @Embedded
@@ -14,4 +15,7 @@ class StationModelEntity {
 
     @Relation(parentColumn = "stationName", entityColumn = "station_name")
     var crashList: List<CrashEntity> = ArrayList()
+
+    @Relation(parentColumn = "stationName", entityColumn = "station_name")
+    var sensorState: List<SensorStateEntity> = ArrayList()
 }

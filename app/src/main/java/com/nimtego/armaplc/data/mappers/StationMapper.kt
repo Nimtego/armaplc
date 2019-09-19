@@ -9,7 +9,8 @@ class StationMapper {
         return StationEntity(
             stationName = stationModel.nameStation,
             stationPhoneNumber = stationModel.phoneNumber,
-            stationAddress = stationModel.address
+            stationAddress = stationModel.address,
+            pollActiveState = stationModel.isPollActive
         )
     }
 
@@ -20,7 +21,7 @@ class StationMapper {
             nameStation = stationEntity.stationName,
             phoneNumber = stationEntity.stationPhoneNumber,
             address = stationEntity.stationAddress,
-            isPollActive = stationEntity.stationState,
+            isPollActive = stationEntity.pollActiveState,
             pumpModels = pumps,
             requestInterval = stationEntity.stationRequestInterval
         )
