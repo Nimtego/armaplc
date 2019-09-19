@@ -1,7 +1,6 @@
 package com.nimtego.armaplc.presentation.di
 
-import com.nimtego.armaplc.data.repository.DiskStationDataSource
-import com.nimtego.armaplc.data.repository.StationRepository
+import com.nimtego.armaplc.data.repository.StationDataSource
 import com.nimtego.armaplc.domain.interactors.SaveStationInteractor
 import com.nimtego.armaplc.domain.interactors.StationInteractor
 import com.nimtego.armaplc.presentation.SchedulersProvider
@@ -20,7 +19,7 @@ class DomainModule {
 
     @Provides
     internal fun provideStationInteractor(
-        stationRepository: DiskStationDataSource,
+        stationRepository: StationDataSource,
         schedulersProvider: SchedulersProvider
     ): StationInteractor {
         return StationInteractor(repository = stationRepository,
@@ -30,7 +29,7 @@ class DomainModule {
     @Provides
     @Singleton
     internal fun provideSaveStationInteractor(
-        stationRepository: DiskStationDataSource,
+        stationRepository: StationDataSource,
         schedulersProvider: SchedulersProvider
     ): SaveStationInteractor {
         return SaveStationInteractor(repository = stationRepository,

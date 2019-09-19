@@ -8,22 +8,26 @@ import com.nimtego.armaplc.data.model.crashes.CrashEntity
 import com.nimtego.armaplc.data.model.crashes.CrashesDao
 import com.nimtego.armaplc.data.model.pump.PumpEntity
 import com.nimtego.armaplc.data.model.pump.PumpsDao
+import com.nimtego.armaplc.data.model.sensors.SensorStateDao
+import com.nimtego.armaplc.data.model.sensors.SensorStateEntity
 import com.nimtego.armaplc.data.model.stations.StationEntity
 import com.nimtego.armaplc.data.model.stations.StationsDao
 
 @Database(
     entities = [CrashEntity::class,
                 PumpEntity::class,
-                StationEntity::class],
+                StationEntity::class,
+                SensorStateEntity::class],
     version = 1, exportSchema = false
 )
-abstract class AppDatabase : RoomDatabase(){
+abstract class StationDatabase : RoomDatabase(){
     abstract fun crashesDao(): CrashesDao
     abstract fun pumpsDao(): PumpsDao
     abstract fun stationDao(): StationsDao
+    abstract fun sensorDao(): SensorStateDao
 
     companion object {
-        @Volatile private var instance: AppDatabase? = null
+        @Volatile private var instance: StationDatabase? = null
         private val LOCK = Any()
 
         operator fun invoke(context: Context)= instance ?: synchronized(
@@ -34,7 +38,7 @@ abstract class AppDatabase : RoomDatabase(){
         }
 
         private fun buildDatabase(context: Context) = Room.databaseBuilder(context,
-            AppDatabase::class.java, "app_database.db")
+            StationDatabase::class.java, "app_database.db")
             .build()
     }
 }

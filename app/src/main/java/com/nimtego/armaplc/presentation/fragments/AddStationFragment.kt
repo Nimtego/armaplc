@@ -80,7 +80,7 @@ class AddStationFragment : BaseFragment() {
             this.viewModel.addStation(generateStation())
         }
         this.cancelButton.setOnClickListener {
-            this@AddStationFragment.onBackPressed()
+            this.onBackPressed()
         }
     }
 
