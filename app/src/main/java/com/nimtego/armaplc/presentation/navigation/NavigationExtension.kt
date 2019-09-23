@@ -9,10 +9,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.nimtego.armaplc.R
 
-fun BottomNavigationView.setupWithNavController(
+fun AHBottomNavigation.setupWithNavController(
     navGraphIds: List<Int>,
     fragmentManager: FragmentManager,
     containerId: Int
@@ -49,7 +50,7 @@ fun BottomNavigationView.setupWithNavController(
         graphIdToTagMap[graphId] = fragmentTag
 
         // Attach or detach nav host fragment depending on whether it's the selected item.
-        if (this.selectedItemId == graphId) {
+        if (this.currentItem == graphId) {
             // Update livedata with the selected graph
             selectedNavController.value = navHostFragment.navController
             attachNavHostFragment(fragmentManager, navHostFragment, index == 0)
@@ -59,17 +60,17 @@ fun BottomNavigationView.setupWithNavController(
     }
 
     // Now connect selecting an item with swapping Fragments
-    var selectedItemTag = graphIdToTagMap[this.selectedItemId]
+    var selectedItemTag = graphIdToTagMap[this.currentItem]
     val firstFragmentTag = graphIdToTagMap[firstFragmentGraphId]
     var isOnFirstFragment = selectedItemTag == firstFragmentTag
 
     // When a navigation item is selected
-    setOnNavigationItemSelectedListener { item ->
+    this.setOnTabSelectedListener { position, wasSelected ->
         // Don't do anything if the state is state has already been saved.
         if (fragmentManager.isStateSaved) {
             false
         } else {
-            val newlySelectedItemTag = graphIdToTagMap[item.itemId]
+            val newlySelectedItemTag = graphIdToTagMap[position]
             if (selectedItemTag != newlySelectedItemTag) {
                 // Pop everything above the first fragment (the "fixed start destination")
                 fragmentManager.popBackStack(firstFragmentTag,
@@ -112,7 +113,7 @@ fun BottomNavigationView.setupWithNavController(
     }
 
     // Optional: on item reselected, pop back stack to the destination of the graph
-    setupItemReselected(graphIdToTagMap, fragmentManager)
+/*    setupItemReselected(graphIdToTagMap, fragmentManager)*/
 
     // Handle deep link
     //setupDeepLinks(navGraphIds, fragmentManager, containerId, intent)
@@ -120,7 +121,7 @@ fun BottomNavigationView.setupWithNavController(
     // Finally, ensure that we update our BottomNavigationView when the back stack changes
     fragmentManager.addOnBackStackChangedListener {
         if (!isOnFirstFragment && !fragmentManager.isOnBackStack(firstFragmentTag)) {
-            this.selectedItemId = firstFragmentGraphId
+            this.currentItem = firstFragmentGraphId
         }
 
         // Reset the graph if the currentDestination is not valid (happens when the back
