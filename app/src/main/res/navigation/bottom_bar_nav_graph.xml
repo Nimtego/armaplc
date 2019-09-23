@@ -3,22 +3,8 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/bottom_bar_nav_graph"
-            app:startDestination="@id/bottomNavigationFragment">
+            app:startDestination="@id/stations_list_nav_graph">
 
-    <fragment
-              android:id="@+id/bottomNavigationFragment"
-              android:name="com.nimtego.armaplc.presentation.fragments.navigation.BottomNavigationFragment"
-              android:label="bottom_navigation_fragment"
-              tools:layout="@layout/nav_bottom_fragment">
-        <action
-                android:id="@+id/action_bottomNavigationFragment_to_stations_list_nav_graph"
-                app:destination="@id/stations_list_nav_graph"/>
-        <action
-                android:id="@+id/action_bottomNavigationFragment_to_dashboard_nav_graph"
-                app:destination="@id/dashboard_nav_graph"/>
-        <action android:id="@+id/action_bottomNavigationFragment_to_options_nav_graph"
-                app:destination="@id/options_nav_graph"/>
-    </fragment>
     <include app:graph="@navigation/dashboard_nav_graph"/>
     <include app:graph="@navigation/options_nav_graph"/>
     <include app:graph="@navigation/stations_list_nav_graph"/>

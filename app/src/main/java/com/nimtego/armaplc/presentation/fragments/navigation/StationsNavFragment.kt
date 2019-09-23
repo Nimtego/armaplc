@@ -13,7 +13,7 @@ import com.nimtego.armaplc.presentation.fragments.BackButtonListener
 class StationsNavFragment: Fragment(), BackButtonListener {
 
 
-    private lateinit var bottomNavController: NavController
+    private lateinit var stationsNavController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,12 +24,12 @@ class StationsNavFragment: Fragment(), BackButtonListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //this.bottomNavController = Navigation.findNavController(view)
-        this.bottomNavController = Navigation.findNavController(view.findViewById(R.id.stations_list_nav_host_fragment))
-        this.bottomNavController.navigate(R.id.stationListFragment)
+        //this.stationsNavController = Navigation.findNavController(view)
+        this.stationsNavController = Navigation.findNavController(view.findViewById(R.id.stations_list_nav_host_fragment))
+        this.stationsNavController.navigate(R.id.stationListFragment)
     }
 
     override fun onBackPressed() {
-        this.bottomNavController.popBackStack()
+        this.stationsNavController.popBackStack()
     }
 }

@@ -12,7 +12,7 @@ import com.nimtego.armaplc.presentation.fragments.BackButtonListener
 
 class OptionsNavFragment : Fragment(), BackButtonListener {
 
-    private lateinit var bottomNavController: NavController
+    private lateinit var optionsNavController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,11 +23,10 @@ class OptionsNavFragment : Fragment(), BackButtonListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //this.bottomNavController = Navigation.findNavController(view)
-        this.bottomNavController = Navigation.findNavController(view.findViewById(R.id.options_nav_host_fragment))
+        this.optionsNavController = Navigation.findNavController(view.findViewById(R.id.options_nav_host_fragment))
     }
 
     override fun onBackPressed() {
-        this.bottomNavController.popBackStack()
+        this.optionsNavController.popBackStack()
     }
 }

@@ -33,7 +33,7 @@ class SplashFragment : Fragment() {
         this.navController = NavHostFragment.findNavController(this)
         Handler().postDelayed({
             context?.let {
-                findNavController().navigate(R.id.bottom_bar_nav_graph)
+                findNavController().navigate(R.id.bottomNavigationFragment)
             }
         }, 1500)
     }

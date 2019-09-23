@@ -28,7 +28,6 @@ class BottomNavigationFragment : Fragment(), BackButtonListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //this.bottomNavController = Navigation.findNavController(view)
         this.bottomNavController = Navigation.findNavController(view.findViewById(R.id.bottom_bar_nav_host_fragment))
         this.bottomNavController.navigate(R.id.dashboard_nav_graph)
     }
@@ -36,7 +35,6 @@ class BottomNavigationFragment : Fragment(), BackButtonListener {
         super.onActivityCreated(savedInstanceState)
         this.bottomNavigationView = bottom_navigation_view
         initBottomNavigation()
-        //this.bottomNavController.navigate(R.id.dashBoardNavFragment)
     }
 
     private fun initBottomNavigation() {
