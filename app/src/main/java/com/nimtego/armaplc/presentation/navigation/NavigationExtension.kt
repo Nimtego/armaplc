@@ -1,6 +1,7 @@
 package com.nimtego.armaplc.presentation.navigation
 
 import android.content.Intent
+import android.util.Log
 import android.util.SparseArray
 import androidx.core.util.forEach
 import androidx.core.util.set
@@ -70,6 +71,7 @@ fun AHBottomNavigation.setupWithNavController(
         if (fragmentManager.isStateSaved) {
             false
         } else {
+
             val newlySelectedItemTag = graphIdToTagMap[position]
             if (selectedItemTag != newlySelectedItemTag) {
                 // Pop everything above the first fragment (the "fixed start destination")
@@ -228,4 +230,4 @@ private fun FragmentManager.isOnBackStack(backStackName: String): Boolean {
     return false
 }
 
-private fun getFragmentTag(index: Int) = "bottomNavigation#$index"
+private fun getFragmentTag(index: Int) = "$index"

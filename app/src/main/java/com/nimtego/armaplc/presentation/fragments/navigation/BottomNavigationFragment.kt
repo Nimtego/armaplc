@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.navOptions
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter
 import com.nimtego.armaplc.R
@@ -30,15 +31,15 @@ class BottomNavigationFragment : Fragment(), BackButtonListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         this.bottomNavController = Navigation.findNavController(view.findViewById(R.id.bottom_bar_nav_host_fragment))
-        this.bottomNavController.navigate(R.id.dashboard_nav_graph)
+        //this.bottomNavController.navigate(R.id.dashboard_nav_graph)
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        this.bottomNavigationView = bottom_navigation_view
         initBottomNavigation()
     }
 
     private fun initBottomNavigation() {
+        this.bottomNavigationView = bottom_navigation_view
         AHBottomNavigationAdapter(activity, R.menu.bottom_navigation_menu).apply {
             setupWithBottomNavigation(bottomNavigationView)
 
@@ -67,6 +68,14 @@ class BottomNavigationFragment : Fragment(), BackButtonListener {
     }
 
     private fun selectTab(number: Int) {
+        val options = navOptions {
+            anim {
+//                enter = R.anim.slide_in_right
+//                exit = R.anim.slide_out_left
+//                popEnter = R.anim.slide_in_left
+//                popExit = R.anim.slide_out_right
+            }
+        }
         when (number) {
             0 -> bottomNavController.navigate(R.id.dashboard_nav_graph)
             1 -> bottomNavController.navigate(R.id.stations_list_nav_graph)

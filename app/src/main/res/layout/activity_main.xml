@@ -7,11 +7,11 @@
               android:orientation="vertical"
               tools:context="com.nimtego.armaplc.presentation.activity.AppActivity">
 
-    <FrameLayout
-            android:id="@+id/status_bar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/android_status_bar_height"
-            android:background="@color/color_background_dark"/>
+    <!--<FrameLayout-->
+            <!--android:id="@+id/status_bar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/android_status_bar_height"-->
+            <!--android:background="@color/color_background_dark"/>-->
 
     <FrameLayout
             android:id="@+id/main_container"
@@ -23,7 +23,6 @@
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="32dp"
                 app:defaultNavHost="true"
                 app:navGraph="@navigation/app_nav_graph"/>
     </FrameLayout>

@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
 import com.nimtego.armaplc.presentation.StationsListAdapter
@@ -29,7 +30,7 @@ class StationListFragment : BaseFragment() {
             .get(StationListViewModel::class.java)
     }
 
-    private lateinit var buttonStation: Button
+    private lateinit var buttonStation: FloatingActionButton
     private lateinit var listStationsRv: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
