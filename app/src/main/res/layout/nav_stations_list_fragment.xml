@@ -5,25 +5,24 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.nimtego.armaplc.presentation.activity.AppActivity">
-
-    <!--<FrameLayout-->
-            <!--android:id="@+id/status_bar"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="@dimen/android_status_bar_height"-->
-            <!--android:background="@color/color_background_dark"/>-->
+              tools:context=".presentation.fragments.navigation.BottomNavigationFragment">
 
     <FrameLayout
-            android:id="@+id/main_container"
+            android:id="@+id/bottom_navigation_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_gravity="fill_vertical"
+            android:layout_weight="1"
+            android:background="@color/color_background_dark"
+            android:focusableInTouchMode="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <fragment
-                android:id="@+id/app_nav_host_fragment"
+                android:id="@+id/stations_list_nav_host_fragment"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:defaultNavHost="true"
-                app:navGraph="@navigation/app_nav_graph"/>
+                android:layout_gravity="fill_vertical"
+                app:navGraph="@navigation/stations_list_nav_graph"/>
     </FrameLayout>
+
 </LinearLayout>

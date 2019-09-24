@@ -3,35 +3,9 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/bottom_bar_nav_graph"
-            app:startDestination="@id/bottomNavigationFragment">
+            app:startDestination="@id/stations_list_nav_graph">
 
-    <fragment android:id="@+id/bottomNavigationFragment"
-              android:name="com.nimtego.armaplc.presentation.fragments.BottomNavigationFragment"
-              android:label="bottom_navigation_fragment"
-              tools:layout="@layout/bottom_navigation_fragment">
-
-        <action android:id="@+id/action_bottomNavigationFragment_to_dashBoardFragment"
-                app:destination="@id/dashBoardFragment"/>
-        <action android:id="@+id/action_bottomNavigationFragment_to_stationListFragment"
-                app:destination="@id/stationListFragment"/>
-        <action android:id="@+id/action_bottomNavigationFragment_to_settingsFragment"
-                app:destination="@id/settingsFragment"/>
-    </fragment>
-    <fragment android:id="@+id/dashBoardFragment" android:name="com.nimtego.armaplc.presentation.fragments.DashBoardFragment"
-              android:label="fragment_dash_board" tools:layout="@layout/fragment_dash_board">
-        <action android:id="@+id/action_dashBoardFragment_to_addStationFragment"
-                app:destination="@id/addStationFragment"/>
-    </fragment>
-    <fragment android:id="@+id/settingsFragment" android:name="com.nimtego.armaplc.presentation.fragments.SettingsFragment"
-              android:label="fragment_settings" tools:layout="@layout/fragment_settings"/>
-    <fragment android:id="@+id/addStationFragment" android:name="com.nimtego.armaplc.presentation.fragments.AddStationFragment"
-              android:label="fragment_add_station" tools:layout="@layout/fragment_add_station"/>
-    <fragment android:id="@+id/stationFragment" android:name="com.nimtego.armaplc.presentation.fragments.StationFragment"
-              android:label="fragment_station" tools:layout="@layout/fragment_station"/>
-    <fragment android:id="@+id/stationListFragment" android:name="com.nimtego.armaplc.presentation.fragments.StationListFragment"
-              android:label="fragment_station_list" tools:layout="@layout/fragment_station_list">
-        <action android:id="@+id/action_stationListFragment_to_stationFragment" app:destination="@id/stationFragment"/>
-        <action android:id="@+id/action_stationListFragment_to_addStationFragment"
-                app:destination="@id/addStationFragment"/>
-    </fragment>
+    <include app:graph="@navigation/dashboard_nav_graph"/>
+    <include app:graph="@navigation/options_nav_graph"/>
+    <include app:graph="@navigation/stations_list_nav_graph"/>
 </navigation>

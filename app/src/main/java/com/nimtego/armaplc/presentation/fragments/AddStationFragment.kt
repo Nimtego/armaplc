@@ -6,14 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
-import com.nimtego.armaplc.presentation.view_model.AddStationViewModel
 import com.nimtego.armaplc.presentation.model.StationModel
+import com.nimtego.armaplc.presentation.view_model.AddStationViewModel
 import com.nimtego.armaplc.presentation.view_model.ViewState
 import kotlinx.android.synthetic.main.fragment_add_station.*
+
 
 class AddStationFragment : BaseFragment() {
 
@@ -54,7 +57,7 @@ class AddStationFragment : BaseFragment() {
         initAddStationEvent()
     }
 
-    private fun initEditTextFields(){
+    private fun initEditTextFields() {
         this.stationName = station_name_edit_text
         this.phoneNumber = station_phone_number_edit_text
         this.stationAddress = station_address_edit_text
@@ -82,7 +85,20 @@ class AddStationFragment : BaseFragment() {
         this.cancelButton.setOnClickListener {
             this.onBackPressed()
         }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                this@AddStationFragment.onBackPressed()
+            }
+        })
     }
+
+//    override fun handleOnBackPressed(): Boolean {
+//        //Do your job here
+//        //use next line if you just need navigate up
+//        //NavHostFragment.findNavController(this).navigateUp();
+//        //Log.e(getClass().getSimpleName(), "handleOnBackPressed");
+//        return true
+//    }
 
     private fun generateStation(): StationModel {
         //todo take away this
@@ -98,7 +114,7 @@ class AddStationFragment : BaseFragment() {
     }
 
     private fun onBackPressed() {
-        //todo
+        this@AddStationFragment.findNavController().navigateUp()
     }
 
     private fun initAddStationEvent() {
@@ -110,6 +126,7 @@ class AddStationFragment : BaseFragment() {
                             requireContext(),
                             R.string.station_add, Toast.LENGTH_SHORT
                         ).show()
+                        this@AddStationFragment.onBackPressed()
                     }
                     else -> {
                         //todo screen: show required fields

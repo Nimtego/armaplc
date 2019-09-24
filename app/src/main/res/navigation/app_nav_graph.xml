@@ -2,14 +2,18 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/app_nav_graph"
-            app:startDestination="@id/splashFragment">
+            android:id="@+id/app_nav_graph" app:startDestination="@id/bottomNavigationFragment">
+
     <fragment android:id="@+id/splashFragment"
               android:name="com.nimtego.armaplc.presentation.fragments.SplashFragment"
               android:label="fragment_splash"
               tools:layout="@layout/fragment_splash">
-        <action android:id="@+id/action_splashFragment_to_bottom_bar_nav_graph"
-                app:destination="@id/bottom_bar_nav_graph"/>
+        <action android:id="@+id/action_splashFragment_to_bottomNavigationFragment"
+                app:destination="@id/bottomNavigationFragment"/>
     </fragment>
-    <include app:graph="@navigation/bottom_bar_nav_graph"/>
+
+    <fragment android:id="@+id/bottomNavigationFragment"
+              android:name="com.nimtego.armaplc.presentation.fragments.navigation.BottomNavigationFragment"
+              android:label="fragment_splash"
+              tools:layout="@layout/nav_bottom_fragment"/>
 </navigation>
