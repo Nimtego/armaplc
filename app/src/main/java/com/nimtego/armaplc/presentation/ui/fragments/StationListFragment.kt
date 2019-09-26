@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation.fragments
+package com.nimtego.armaplc.presentation.ui.fragments
 
 
 import android.os.Bundle
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
-import com.nimtego.armaplc.presentation.StationsListAdapter
+import com.nimtego.armaplc.presentation.ui.widget.StationsListAdapter
 import com.nimtego.armaplc.presentation.model.StationsContainer
 import com.nimtego.armaplc.presentation.view_model.StationListViewModel
 import com.nimtego.armaplc.presentation.model.Station

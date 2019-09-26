@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation.fragments.navigation
+package com.nimtego.armaplc.presentation.ui.fragments.navigation
 
 
 import android.os.Bundle
@@ -12,8 +12,7 @@ import androidx.navigation.navOptions
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter
 import com.nimtego.armaplc.R
-import com.nimtego.armaplc.presentation.fragments.BackButtonListener
-import com.nimtego.armaplc.presentation.navigation.setupWithNavController
+import com.nimtego.armaplc.presentation.ui.fragments.BackButtonListener
 import kotlinx.android.synthetic.main.nav_bottom_fragment.*
 
 class BottomNavigationFragment : Fragment(), BackButtonListener {

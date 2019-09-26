@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation
+package com.nimtego.armaplc.presentation.scheduler
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

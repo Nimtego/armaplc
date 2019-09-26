@@ -1,9 +1,8 @@
-package com.nimtego.armaplc.presentation.activity
+package com.nimtego.armaplc.presentation.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import com.nimtego.armaplc.R
 

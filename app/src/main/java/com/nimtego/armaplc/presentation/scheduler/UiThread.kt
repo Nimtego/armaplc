@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation
+package com.nimtego.armaplc.presentation.scheduler
 
 import com.nimtego.armaplc.domain.executor.PostExecutionThread
 import io.reactivex.Scheduler

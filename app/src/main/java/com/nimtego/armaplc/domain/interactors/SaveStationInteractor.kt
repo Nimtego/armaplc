@@ -1,7 +1,7 @@
 package com.nimtego.armaplc.domain.interactors
 
 import com.nimtego.armaplc.data.repository.StationRepository
-import com.nimtego.armaplc.presentation.SchedulersProvider
+import com.nimtego.armaplc.presentation.scheduler.SchedulersProvider
 import com.nimtego.armaplc.presentation.model.Station
 import io.reactivex.Completable
 import javax.inject.Inject

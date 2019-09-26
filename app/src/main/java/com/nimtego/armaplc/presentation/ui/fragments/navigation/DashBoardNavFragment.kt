@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation.fragments.navigation
+package com.nimtego.armaplc.presentation.ui.fragments.navigation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.nimtego.armaplc.R
-import com.nimtego.armaplc.presentation.fragments.BackButtonListener
+import com.nimtego.armaplc.presentation.ui.fragments.BackButtonListener
 
 class DashBoardNavFragment : Fragment(), BackButtonListener {
 
