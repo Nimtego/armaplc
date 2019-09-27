@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.nimtego.armaplc">
+          xmlns:tools="http://schemas.android.com/tools" package="com.nimtego.armaplc">
+
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
             android:name=".App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
-            android:supportsRtl="true"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/AppTheme">
-        <activity android:name="com.nimtego.armaplc.presentation.ui.activity.AppActivity">
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".presentation.ui.activity.AppActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <service android:name=".presentation.services.MessageService">
+
+        </service>
+        <receiver android:name="com.nimtego.armaplc.presentation.receivers.SmsBroadcastReceiver"
+                  android:enabled="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
