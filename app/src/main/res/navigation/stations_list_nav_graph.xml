@@ -5,7 +5,7 @@
             app:startDestination="@id/stationsNavFragment">
 
     <fragment android:id="@+id/stationListFragment"
-              android:name="com.nimtego.armaplc.presentation.fragments.StationListFragment"
+              android:name="com.nimtego.armaplc.presentation.ui.fragments.StationListFragment"
               android:label="fragment_station_list"
               tools:layout="@layout/fragment_station_list">
         <action android:id="@+id/action_stationListFragment_to_addStationFragment"
@@ -13,15 +13,15 @@
         <action android:id="@+id/action_stationListFragment_to_stationFragment" app:destination="@id/stationFragment"/>
     </fragment>
     <fragment android:id="@+id/stationsNavFragment"
-              android:name="com.nimtego.armaplc.presentation.fragments.navigation.StationsNavFragment"
+              android:name="com.nimtego.armaplc.presentation.ui.fragments.navigation.StationsNavFragment"
               android:label="StationsNavFragment">
         <action android:id="@+id/action_stationsNavFragment_to_stationListFragment"
                 app:destination="@id/stationListFragment"/>
     </fragment>
     <fragment android:id="@+id/addStationFragment"
-              android:name="com.nimtego.armaplc.presentation.fragments.AddStationFragment"
+              android:name="com.nimtego.armaplc.presentation.ui.fragments.AddStationFragment"
               android:label="fragment_add_station" tools:layout="@layout/fragment_add_station"/>
     <fragment android:id="@+id/stationFragment"
-              android:name="com.nimtego.armaplc.presentation.fragments.StationFragment" android:label="fragment_station"
+              android:name="com.nimtego.armaplc.presentation.ui.fragments.StationFragment" android:label="fragment_station"
               tools:layout="@layout/fragment_station"/>
 </navigation>

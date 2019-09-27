@@ -1,19 +1,19 @@
 package com.nimtego.armaplc.domain.interactors
 
 import com.nimtego.armaplc.data.repository.StationRepository
-import com.nimtego.armaplc.presentation.SchedulersProvider
-import com.nimtego.armaplc.presentation.model.StationModel
+import com.nimtego.armaplc.presentation.scheduler.SchedulersProvider
+import com.nimtego.armaplc.presentation.model.Station
 import io.reactivex.Completable
 import javax.inject.Inject
 
 class SaveStationInteractor @Inject constructor(
     private val repository: StationRepository,
     private val schedulersProvider: SchedulersProvider
-) : CompletableInteractor<StationModel>(schedulersProvider) {
+) : CompletableInteractor<Station>(schedulersProvider) {
 
     override fun providePostExecutionThread() = this.schedulersProvider.ui()
 
-    override fun buildUseCaseCompletable(params: StationModel?): Completable {
+    override fun buildUseCaseCompletable(params: Station?): Completable {
         return if (params != null && stationIsValid(params)) {
             repository.saveStation(params)
         } else {
@@ -22,8 +22,8 @@ class SaveStationInteractor @Inject constructor(
     }
 
     //todo
-    private fun stationIsValid(stationVIewModel: StationModel): Boolean {
-        return (stationVIewModel.nameStation.isNotBlank() &&
-                stationVIewModel.phoneNumber.isNotBlank())
+    private fun stationIsValid(stationVIew: Station): Boolean {
+        return (stationVIew.nameStation.isNotBlank() &&
+                stationVIew.phoneNumber.isNotBlank())
     }
 }

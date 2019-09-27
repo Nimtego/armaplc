@@ -1,11 +1,11 @@
 package com.nimtego.armaplc.presentation.model
 
+import com.nimtego.armaplc.data.model.crashes.CrashEntity
 import com.nimtego.armaplc.data.model.pump.PumpEntity
+import com.nimtego.armaplc.data.model.sensors.SensorStateEntity
 
-data class StationModel(val nameStation: String,
-                        val phoneNumber: String,
-                        val address: String = "",
-                        val pumpCount: Int = 1,
-                        val pumpModels: List<PumpEntity> = listOf(),
-                        val requestInterval: Int = 0,
-                        val isPollActive: Boolean)
+data class StationModel(val station: Station,
+                        val pumpsList: List<PumpEntity>,
+                        val crashList: List<CrashEntity>,
+                        val sensorState: SensorStateEntity
+)

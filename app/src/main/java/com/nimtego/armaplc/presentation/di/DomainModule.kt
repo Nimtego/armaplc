@@ -3,7 +3,7 @@ package com.nimtego.armaplc.presentation.di
 import com.nimtego.armaplc.data.repository.StationDataSource
 import com.nimtego.armaplc.domain.interactors.SaveStationInteractor
 import com.nimtego.armaplc.domain.interactors.StationInteractor
-import com.nimtego.armaplc.presentation.SchedulersProvider
+import com.nimtego.armaplc.presentation.scheduler.SchedulersProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

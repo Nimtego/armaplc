@@ -1,9 +1,8 @@
 package com.nimtego.armaplc.presentation.di
 
 import android.app.Application
-import android.content.Context
-import com.nimtego.armaplc.presentation.fragments.AddStationFragment
-import com.nimtego.armaplc.presentation.fragments.StationListFragment
+import com.nimtego.armaplc.presentation.ui.fragments.AddStationFragment
+import com.nimtego.armaplc.presentation.ui.fragments.StationListFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

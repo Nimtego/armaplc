@@ -1,11 +1,10 @@
-package com.nimtego.armaplc.presentation.fragments
+package com.nimtego.armaplc.presentation.ui.fragments
 
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -15,10 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
-import com.nimtego.armaplc.presentation.StationsListAdapter
+import com.nimtego.armaplc.presentation.ui.widget.StationsListAdapter
 import com.nimtego.armaplc.presentation.model.StationsContainer
 import com.nimtego.armaplc.presentation.view_model.StationListViewModel
-import com.nimtego.armaplc.presentation.model.StationModel
+import com.nimtego.armaplc.presentation.model.Station
 import com.nimtego.armaplc.presentation.view_model.ViewState
 import kotlinx.android.synthetic.main.fragment_station_list.*
 
@@ -78,13 +77,13 @@ class StationListFragment : BaseFragment() {
 
     private fun updateStation(stationModel: StationsContainer?) {
         stationModel?.let {
-            this.listStationsRv.adapter = StationsListAdapter(it.stationsModel) {
+            this.listStationsRv.adapter = StationsListAdapter(it.stations) {
                 stationClick(it)
             }
         }
     }
 
-    private fun stationClick(stationModel: StationModel) {
+    private fun stationClick(station: Station) {
         //todo
     }
 

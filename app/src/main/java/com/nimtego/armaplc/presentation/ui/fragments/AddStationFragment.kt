@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation.fragments
+package com.nimtego.armaplc.presentation.ui.fragments
 
 
 import android.os.Bundle
@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.nimtego.armaplc.App
 import com.nimtego.armaplc.R
-import com.nimtego.armaplc.presentation.model.StationModel
+import com.nimtego.armaplc.presentation.model.Station
 import com.nimtego.armaplc.presentation.view_model.AddStationViewModel
 import com.nimtego.armaplc.presentation.view_model.ViewState
 import kotlinx.android.synthetic.main.fragment_add_station.*
@@ -100,10 +100,10 @@ class AddStationFragment : BaseFragment() {
 //        return true
 //    }
 
-    private fun generateStation(): StationModel {
+    private fun generateStation(): Station {
         //todo take away this
         val checkRequestInterval = this.requestInterval.text.ifEmpty { 0 }.toString().toInt()
-        return StationModel(
+        return Station(
             nameStation = this.stationName.text.toString(),
             address = this.stationAddress.text.toString(),
             phoneNumber = this.phoneNumber.text.toString(),
