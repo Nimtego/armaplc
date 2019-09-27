@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation
+package com.nimtego.armaplc.presentation.ui.widget
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nimtego.armaplc.R
-import com.nimtego.armaplc.presentation.model.StationModel
+import com.nimtego.armaplc.presentation.model.Station
 
 class StationsListAdapter(
-    private val stationModel: List<StationModel>,
-    private val onClick: (StationModel) -> Unit
+    private val station: List<Station>,
+    private val onClick: (Station) -> Unit
 ) : RecyclerView.Adapter<StationsListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,7 +20,7 @@ class StationsListAdapter(
         holder.itemView.setOnClickListener { _: View ->
             val adapterPosition = holder.adapterPosition
             if (adapterPosition != RecyclerView.NO_POSITION) {
-                this.stationModel[adapterPosition].let {
+                this.station[adapterPosition].let {
                     this.onClick(it)
                 }
             }
@@ -29,7 +29,7 @@ class StationsListAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val station = stationModel[position]
+        val station = station[position]
         holder.apply {
             stationName.text = station.nameStation
             stationAddress.text = station.address
@@ -38,7 +38,7 @@ class StationsListAdapter(
 
     }
 
-    override fun getItemCount(): Int = stationModel.size
+    override fun getItemCount(): Int = station.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var stationName: TextView = itemView.findViewById(R.id.station_name)

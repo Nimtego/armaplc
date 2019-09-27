@@ -5,11 +5,11 @@
             android:id="@+id/dashboard_nav_graph"
             app:startDestination="@id/dashBoardFragment">
     <fragment android:id="@+id/dashBoardFragment"
-              android:name="com.nimtego.armaplc.presentation.fragments.DashBoardFragment"
+              android:name="com.nimtego.armaplc.presentation.ui.fragments.DashBoardFragment"
               android:label="fragment_dash_board"
               tools:layout="@layout/fragment_dash_board"/>
     <fragment android:id="@+id/dashBoardNavFragment"
-              android:name="com.nimtego.armaplc.presentation.fragments.navigation.DashBoardNavFragment"
+              android:name="com.nimtego.armaplc.presentation.ui.fragments.navigation.DashBoardNavFragment"
               android:label="DashBoardNavFragment">
         <action android:id="@+id/action_dashBoardNavFragment_to_dashBoardFragment"
                 app:destination="@id/dashBoardFragment"/>

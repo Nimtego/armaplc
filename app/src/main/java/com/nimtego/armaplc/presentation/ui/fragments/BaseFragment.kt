@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation.fragments
+package com.nimtego.armaplc.presentation.ui.fragments
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider

@@ -5,7 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context=".presentation.fragments.navigation.BottomNavigationFragment">
+              tools:context=".presentation.ui.fragments.navigation.BottomNavigationFragment">
 
     <FrameLayout
             android:id="@+id/bottom_navigation_container"

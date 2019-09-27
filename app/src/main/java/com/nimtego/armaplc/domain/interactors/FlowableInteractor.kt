@@ -1,6 +1,6 @@
 package com.nimtego.armaplc.domain.interactors
 
-import com.nimtego.armaplc.presentation.SchedulersProvider
+import com.nimtego.armaplc.presentation.scheduler.SchedulersProvider
 import io.reactivex.Flowable
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable

@@ -1,4 +1,4 @@
-package com.nimtego.armaplc.presentation.fragments
+package com.nimtego.armaplc.presentation.ui.fragments
 
 
 import android.os.Bundle
@@ -12,7 +12,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.nimtego.armaplc.R
-import kotlinx.android.synthetic.main.fragment_splash.*
 
 
 class SplashFragment : Fragment() {
