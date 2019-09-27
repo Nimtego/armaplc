@@ -109,7 +109,7 @@ class AddStationFragment : BaseFragment() {
             phoneNumber = this.phoneNumber.text.toString(),
             pumpCount = this.pumpNumberPicker.value,
             requestInterval = checkRequestInterval,
-            isPollActive = this.pollActiveCheckBox.isActivated
+            isPollActive = this.pollActiveCheckBox.isChecked
         )
     }
 

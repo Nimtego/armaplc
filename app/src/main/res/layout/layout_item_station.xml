@@ -74,5 +74,15 @@
                 app:layout_constraintBottom_toBottomOf="@+id/header_station_phone_number"
                 app:layout_constraintStart_toStartOf="@+id/station_address"
                 tools:text="Station pump's number"/>
+        <CheckBox
+                android:id="@+id/poll_active_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/poll_active"
+                android:checked="false"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

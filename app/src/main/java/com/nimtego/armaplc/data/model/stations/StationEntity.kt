@@ -11,7 +11,7 @@ data class StationEntity(
     val stationName: String,
 
     @ColumnInfo(name = "state")
-    val pollActiveState: Boolean = false,
+    val pollActiveState: Boolean,
 
     @ColumnInfo(name = "address")
     val stationAddress: String = "",
