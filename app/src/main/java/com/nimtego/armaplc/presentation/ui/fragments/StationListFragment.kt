@@ -84,7 +84,7 @@ class StationListFragment : BaseFragment() {
     }
 
     private fun stationClick(station: Station) {
-        //todo
+        this.stationListViewModel.removeStation(station)
     }
 
 

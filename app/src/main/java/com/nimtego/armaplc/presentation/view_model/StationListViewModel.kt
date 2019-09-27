@@ -1,12 +1,15 @@
 package com.nimtego.armaplc.presentation.view_model
 
 import androidx.lifecycle.*
+import com.nimtego.armaplc.domain.interactors.RemoveStationInteractor
 import com.nimtego.armaplc.domain.interactors.StationInteractor
+import com.nimtego.armaplc.presentation.model.Station
 import com.nimtego.armaplc.presentation.model.StationsContainer
 import javax.inject.Inject
 
 class StationListViewModel @Inject constructor (
-    private val interactor: StationInteractor
+    private val interactor: StationInteractor,
+    private val removeInteractor: RemoveStationInteractor
 ) : ViewModel(), LifecycleObserver {
 
     private val state: MutableLiveData<ViewState<StationsContainer>> = MutableLiveData()
@@ -29,6 +32,13 @@ class StationListViewModel @Inject constructor (
                 }
             )
         }
+    }
+
+    fun removeStation(station: Station) {
+        this.removeInteractor.execute(station,
+            { state.postValue(ViewState(ViewState.Status.SUCCESS)) },
+            { state.postValue(ViewState(ViewState.Status.ERROR, error = it)) }
+        )
     }
 
 
