@@ -7,8 +7,8 @@
     <string name="message_error_load">"Error"</string>
     <string name="station_add">Station add</string>
     <string name="station_address">Station address</string>
-    <string name="station_name">Station name</string>
-    <string name="phone_number">Phone number</string>
+    <string name="station_name">Name:</string>
+    <string name="phone_number">P.number:</string>
     <string name="address">Address</string>
     <string name="pump_model">Pump model</string>
     <string name="request_interval">Request interval</string>

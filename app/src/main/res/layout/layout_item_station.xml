@@ -30,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
         <TextView
                 android:id="@+id/station_name"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 tools:text="Station test name"
                 style="@style/TextStyle"
@@ -41,14 +41,14 @@
                 android:id="@+id/header_station_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/station_address"
+                android:text="@string/address"
                 style="@style/HeaderTextStyle"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/header_station_name"
                 app:layout_constraintTop_toBottomOf="@+id/header_station_name"/>
         <TextView
                 android:id="@+id/station_address"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 tools:text="Station test address"
                 style="@style/TextStyle"
@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/header_station_address"/>
         <TextView
                 android:id="@+id/station_phone_number"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 style="@style/TextStyle"
                 app:layout_constraintTop_toTopOf="@+id/header_station_phone_number"

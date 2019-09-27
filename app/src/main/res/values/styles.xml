@@ -17,6 +17,9 @@
     <style name="TextStyle" parent="@android:style/TextAppearance.Medium">
         <item name="android:textSize">@dimen/text_view_size_default</item>
         <item name="android:textColor">@color/text_view_default_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">false</item>
         <item name="android:lineSpacingExtra">6sp</item>
     </style>
 

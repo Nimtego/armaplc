@@ -3,8 +3,8 @@
     <dimen name="android_status_bar_height">24dp</dimen>
 
     <!-- Text size -->
-    <dimen name="text_view_size_default">16sp</dimen>
-    <dimen name="text_view_size_header">18sp</dimen>
+    <dimen name="text_view_size_default">14sp</dimen>
+    <dimen name="text_view_size_header">16sp</dimen>
 
     <!-- rounded -->
     <dimen name="rounded_edit_text">16sp</dimen>
